@@ -200,12 +200,8 @@ const Portfolio = () => {
                 IT / Full Stack Developer
               </h2>
 
-              <a
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  downloadFile();
-                }}
+              <button
+                onClick={downloadFile}
                 className="download-cv-btn"
                 style={{
                   display: 'inline-block',
@@ -218,7 +214,8 @@ const Portfolio = () => {
                   background: 'transparent',
                   transition: 'all 0.3s ease',
                   borderRadius: '4px',
-                  cursor: 'pointer'
+                  cursor: 'pointer',
+                  fontFamily: 'inherit'  // <-- Yeh add karein taake font match kare
                 }}
                 onMouseEnter={(e) => {
                   e.target.style.background = 'var(--primary-color)';
@@ -232,7 +229,7 @@ const Portfolio = () => {
                 }}
               >
                 Download CV
-              </a>
+              </button>
             </div>
 
             {/* Right - Profile Image */}
