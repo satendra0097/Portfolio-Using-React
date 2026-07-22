@@ -1506,10 +1506,24 @@ body.light-mode .download-cv-btn:hover {
     font-size: 0.8rem;
   }
 
+   .download-cv-btn {
+  display: inline-block;
+  padding: 14px 45px;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
   .download-cv-btn {
-    padding: 12px 30px;
+    padding: 10px 24px;
     font-size: 14px;
-    width: 100%;
-    text-align: center;
   }
+}
+
+@media (max-width: 480px) {
+  .download-cv-btn {
+    padding: 8px 18px;
+    font-size: 13px;
+  }
+}
+
 }

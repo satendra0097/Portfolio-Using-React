@@ -204,35 +204,21 @@ const Portfolio = () => {
               </h2>
 
               <button
-                onClick={downloadFile}
-                className="download-cv-btn"
-                style={{
-                  display: 'inline-block',
-                  padding: '14px 45px',
-                  border: '2px solid var(--border-color)',
-                  textDecoration: 'none',
-                  color: 'var(--text-primary)',
-                  fontSize: '16px',
-                  fontWeight: '500',
-                  background: 'transparent',
-                  transition: 'all 0.3s ease',
-                  borderRadius: '4px',
-                  cursor: 'pointer',
-                  fontFamily: 'inherit'
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.background = 'var(--primary-color)';
-                  e.target.style.color = '#ffffff';
-                  e.target.style.borderColor = 'var(--primary-color)';
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.background = 'transparent';
-                  e.target.style.color = 'var(--text-primary)';
-                  e.target.style.borderColor = 'var(--border-color)';
-                }}
-              >
-                Download CV
-              </button>
+  onClick={downloadFile}
+  className="download-cv-btn"
+  style={{
+    border: '2px solid var(--border-color)',
+    textDecoration: 'none',
+    color: 'var(--text-primary)',
+    background: 'transparent',
+    transition: 'all 0.3s ease',
+    borderRadius: '4px',
+    cursor: 'pointer',
+    fontFamily: 'inherit'
+  }}
+>
+  Download CV
+</button>
             </div>
 
             {/* Right - Profile Image */}
