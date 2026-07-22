@@ -6,7 +6,7 @@ const Portfolio = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
-  const [isWhiteMode, setIsWhiteMode] = useState(false); // Default light mode
+  const [isWhiteMode, setIsWhiteMode] = useState(false);
 
   const resumeFile = 'Satendra_Baghel_Resume.pdf';
 
@@ -32,6 +32,14 @@ const Portfolio = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (isWhiteMode) {
+      document.body.classList.add('light-mode');
+    } else {
+      document.body.classList.remove('light-mode');
+    }
+  }, [isWhiteMode]);
+
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -42,11 +50,6 @@ const Portfolio = () => {
 
   const toggleWhiteMode = () => {
     setIsWhiteMode(!isWhiteMode);
-    if (isWhiteMode) {
-      document.body.classList.remove('light-mode');
-    } else {
-      document.body.classList.add('light-mode');
-    }
   };
 
   const navItems = [
@@ -215,7 +218,7 @@ const Portfolio = () => {
                   transition: 'all 0.3s ease',
                   borderRadius: '4px',
                   cursor: 'pointer',
-                  fontFamily: 'inherit'  // <-- Yeh add karein taake font match kare
+                  fontFamily: 'inherit'
                 }}
                 onMouseEnter={(e) => {
                   e.target.style.background = 'var(--primary-color)';
@@ -250,15 +253,17 @@ const Portfolio = () => {
                 justifyContent: 'center',
                 background: 'var(--bg-secondary)'
               }}>
-                <img
-                  src='photo.png'
-                  alt="Satendra Baghel"
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover'
-                  }}
-                />
+               <img
+  src="photo.png"
+  alt="Satendra Baghel"
+  style={{
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+    objectPosition: "center 20px", // image 20px niche shift hogi
+    transform: "scale(1.1)", // thodi badi dikhegi
+  }}
+/>
               </div>
             </div>
           </div>
